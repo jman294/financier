@@ -1,0 +1,26 @@
+{
+  "name": "financier",
+  "version": "1.0.0",
+  "description": "An electron finance app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jman294/financier.git"
+  },
+  "keywords": [
+    "finance",
+    "electron",
+    "app",
+    "widget",
+    "stock"
+  ],
+  "author": "Jack DuPlessis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jman294/financier/issues"
+  },
+  "homepage": "https://github.com/jman294/financier#readme"
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Financier</title>
+
+  <link rel="stylesheet" type="text/css" href="../styles/stocklist.css">
+  <link rel="stylesheet" type="text/css" href="../styles/lib/ripple.min.css">
+  <link rel="stylesheet" type="text/css" href="../styles/lib/font-awesome.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+  <script async src="../js/main.js"></script>
+  <!--<script data-main="../js/main" src="../js/lib/require.js"></script>-->
+</head>
+
+<body>
+  <div id="stock-list">
+    <button>Add new stock!</button>
+
+    <section class="ripple">
+      <div class="header">
+        <h1 class="negative">VIOO</h1>
+        <p class="negative">
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          19.7%
+        </p>
+      </div>
+    </section>
+    <section class="ripple">
+      <div class="header">
+        <h1 class="positive">GOOG</h1>
+        <p class="positive">
+          <i class="fa fa-chevron-up" aria-hidden="true"></i>
+          49.7%
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <template id="stockTemplate">
+    <section class="ripple">
+      <div class="header">
+        <h1 class=""></h1>
+        <p class="">
+          <i class="fa " aria-hidden="true"></i>
+          <span></span>
+        </p>
+      </div>
+    </section>
+  </template>
+
+</body>
+
+</html>

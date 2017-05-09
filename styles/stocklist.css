@@ -1,0 +1,36 @@
+* {
+  margin: 0px;
+}
+
+#stock-list section {
+  padding: 10px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#stock-list section .header {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#stock-list section .header * {
+  display: inline;
+}
+
+#stock-list section .header p {
+  font-weight: bold;
+  float: right;
+  line-height: 2em;
+}
+
+#stock-list section .negative {
+  color: #F44336;
+}
+
+#stock-list section .positive {
+  color: #4CAF50;
+}
+
+.mouse-handle {
+  background: url("./imgs/handle.png") bottom center no-repeat;
+  display: inline-block !important;
+}
