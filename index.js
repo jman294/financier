@@ -7,7 +7,7 @@ const url = require('url')
 
 let win
 
-let debug = false
+let debug = true
 
 function createWindow() {
   // Create the browser window.
