@@ -13,7 +13,8 @@ let stocks = (function() {
       path: '/finance/info?q='+PREFIX.concat(symbol.toUpperCase()),
     }, function (status, res) {
       var obj = JSON.parse(res.slice(3))
-      callback(obj[0].c)
+      console.log(obj)
+      callback(obj[0].cp)
     })
   }
 
