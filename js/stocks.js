@@ -1,72 +1,32 @@
+const moment = require('moment')
 const finance = require('google-finance')
+const getJson = require('../js/getjson')
 
 let stocks = (function() {
   const PREFIX = 'NASDAQ:'
 
   let getCurrentPercent = function(symbol, callback) {
-    //
-    //
-    // Percent of change for stocks is like this:
-    //
-    // today's close - yesterday's close
-    // ---------------------------------
-    //        yesterday's close
-    //
-    //
-    // MomentJS is already installed :)
-    //
-    //
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; //January is 0!
-    var yyyy = today.getFullYear().toString();
-
-    if (dd < 10) {
-      dd = '0' + dd
-    }
-
-    if (mm < 10) {
-      mm = '0' + mm
-    }
-
-    today = yyyy.concat('-').concat(mm).concat('-').concat(dd)
-
-    finance.historical({
-      symbol: PREFIX.concat(symbol.toUpperCase()),
-      from: today,
-      to: today
-    }, function(err, quotes) {
-      let change = quotes[0].close - quotes[0].open
-      let percent = change / quotes[0].open * 100
-      callback(percent)
+    getJson({
+      host: 'www.google.com',
+      port: 443,
+      method: 'GET',
+      path: '/finance/info?q='+PREFIX.concat(symbol.toUpperCase()),
+    }, function (status, res) {
+      var obj = JSON.parse(res.slice(3))
+      callback(obj[0].c)
     })
-
   }
 
   let getCurrentPrice = function(symbol, callback) {
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; //January is 0!
-    var yyyy = today.getFullYear().toString();
-
-    if (dd < 10) {
-      dd = '0' + dd
-    }
-
-    if (mm < 10) {
-      mm = '0' + mm
-    }
-
-    today = yyyy.concat('-').concat(mm).concat('-').concat(dd)
-
-    finance.historical({
-      symbol: PREFIX.concat(symbol.toUpperCase()),
-      from: today,
-      to: today
-    }, function(err, quotes) {
-      callback(quotes[0].close)
+    getJson({
+      host: 'www.google.com',
+      port: 443,
+      method: 'GET',
+      path: '/finance/info?q='+PREFIX.concat(symbol.toUpperCase()),
+    }, function (status, res) {
+      var obj = JSON.parse(res.slice(3))
+      callback(obj[0].l)
     })
-
   }
 
   return {
