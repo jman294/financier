@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/jman294/financier#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "google-finance": "^0.1.9",
     "moment": "^2.18.1"
   }
